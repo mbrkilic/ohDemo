@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import HomePage from './HomePage';
+import Card from './components/Card';
+import EndSec from './components/EndSec';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import HeroSec from './components/HeroSec'; 
+import Contact from './components/Contact';
+import ProfilePage from './components/ProfilePage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+  <Header/>
+  {/* <HomePage/> */}
+  <Routes>
+    <Route path="/" element={<HomePage/>}></Route>
+    <Route path="/profile" element={<ProfilePage/>}></Route>
+    <Route path="/contact" element={<Contact/>}></Route>
+  </Routes>
+    {/* <HeroSec />
+  <Card/>
+  <EndSec/> */}
+  <Footer/>
     </div>
   );
 }
